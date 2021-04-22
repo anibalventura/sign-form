@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sign_form/screens/welcome_screen.dart';
 import 'package:sign_form/utils/size_helper.dart';
-import 'package:sign_form/utils/themes.dart';
 import 'package:sign_form/widgets/progress_indicator.dart';
 import 'package:sign_form/widgets/form_field.dart';
 import 'package:sign_form/widgets/round_button.dart';
