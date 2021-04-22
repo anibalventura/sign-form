@@ -1,16 +1,26 @@
-# sign_form
+# Sign Form
 
-A new Flutter project.
+[![Flutter](https://img.shields.io/static/v1?label=Flutter&message=2.0&color=blue)](https://flutter.dev/)
+[![Null Safety](https://img.shields.io/static/v1?label=Null+Safety&message=YES&color=success)](https://flutter.dev/docs/null-safety)
+<img src="https://img.shields.io/badge/-WEB-4285F4?style=flat&logo=google-chrome&logoColor=FFFFFF">
 
-## Getting Started
+<img src="assets/images/repository-banner.png" align="center"/>
 
-This project is a starting point for a Flutter application.
+Simple web sign form.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Progress indicator when fill form.
+- Check if all fields are completed.
+- Welcome page with logout button.
+- Dark mode support.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Dependencies
+
+- [google_fonts](https://pub.dev/packages/google_fonts)
+
+# License
+
+```xml
+Copyright 2021 Anibal Ventura
+```
