@@ -26,15 +26,15 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
 
     final colorTween = TweenSequence([
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.red, end: Colors.orange),
+        tween: ColorTween(begin: Colors.red, end: Colors.orange[200]),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.orange, end: Colors.yellow),
+        tween: ColorTween(begin: Colors.orange, end: Colors.yellow[200]),
         weight: 1,
       ),
       TweenSequenceItem(
-        tween: ColorTween(begin: Colors.yellow, end: Colors.green),
+        tween: ColorTween(begin: Colors.yellow, end: Colors.green[200]),
         weight: 1,
       ),
     ]);

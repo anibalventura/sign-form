@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:sign_form/screens/welcome_screen.dart';
+import 'package:sign_form/utils/size_helper.dart';
+import 'package:sign_form/utils/themes.dart';
 import 'package:sign_form/widgets/progress_indicator.dart';
 import 'package:sign_form/widgets/form_field.dart';
+import 'package:sign_form/widgets/round_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   static final route = '/';
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context).size;
-
     return Scaffold(
-      backgroundColor: Colors.grey[200],
       body: Center(
         child: Container(
-          width: mediaQuery.width * 0.5,
+          width: screenWidth(context) * 0.6,
           child: Card(
             child: SignUpForm(),
           ),
@@ -63,8 +63,6 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context).size;
-
     return Form(
       onChanged: _updateFormProgress,
       child: Column(
@@ -72,10 +70,10 @@ class _SignUpFormState extends State<SignUpForm> {
         children: [
           AnimatedProgressIndicator(value: _formProgress),
           Padding(
-            padding: EdgeInsets.only(top: mediaQuery.width * 0.02),
+            padding: EdgeInsets.only(top: screenWidth(context) * 0.02),
             child: Text(
               'Sign up',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline1,
             ),
           ),
           SignFormField(
@@ -96,24 +94,21 @@ class _SignUpFormState extends State<SignUpForm> {
             password: true,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: mediaQuery.width * 0.01),
-            child: TextButton(
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.resolveWith(
-                    (Set<MaterialState> states) {
-                  return states.contains(MaterialState.disabled)
-                      ? null
-                      : Colors.white;
-                }),
-                backgroundColor: MaterialStateProperty.resolveWith(
-                    (Set<MaterialState> states) {
-                  return states.contains(MaterialState.disabled)
-                      ? null
-                      : Colors.blue;
-                }),
-              ),
-              onPressed: _formProgress == 1 ? _showWelcomeScreen : null,
-              child: Text('Sign up'),
+            padding:
+                EdgeInsets.symmetric(vertical: screenWidth(context) * 0.02),
+            child: RoundButton(
+              text: 'Sign up',
+              icon: Icons.login,
+              onTap: () {
+                _formProgress == 1
+                    ? _showWelcomeScreen()
+                    : ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Please fill all the fields.'),
+                          duration: Duration(seconds: 2),
+                        ),
+                      );
+              },
             ),
           ),
         ],
