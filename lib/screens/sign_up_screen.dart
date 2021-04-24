@@ -12,10 +12,12 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          width: 0.7.sw,
-          child: Card(
-            child: SignUpForm(),
+        child: SingleChildScrollView(
+          child: Container(
+            width: 0.7.sw,
+            child: Card(
+              child: SignUpForm(),
+            ),
           ),
         ),
       ),
