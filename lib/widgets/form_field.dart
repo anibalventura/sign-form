@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sign_form/utils/size_helper.dart';
 import 'package:sign_form/utils/themes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignFormField extends StatelessWidget {
   SignFormField({
@@ -17,8 +17,8 @@ class SignFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: screenWidth(context) * 0.03,
-        vertical: screenHeight(context) * 0.01,
+        horizontal: 0.03.sw,
+        vertical: 0.01.sh,
       ),
       child: TextFormField(
         controller: controller,

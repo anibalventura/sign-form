@@ -2,7 +2,7 @@
 
 [![Flutter](https://img.shields.io/static/v1?label=Flutter&message=2.0&color=blue)](https://flutter.dev/)
 [![Null Safety](https://img.shields.io/static/v1?label=Null+Safety&message=YES&color=success)](https://flutter.dev/docs/null-safety)
-<img src="https://img.shields.io/badge/-WEB-4285F4?style=flat&logo=google-chrome&logoColor=FFFFFF">
+[![Flutter Support](https://img.shields.io/static/v1?label=Support&message=Web&color=blue)]()
 
 <img src="assets/images/repository-banner.png" align="center"/>
 
@@ -13,10 +13,12 @@ Simple web sign form.
 - Progress indicator when fill form.
 - Check if all fields are completed.
 - Welcome page with logout button.
+- Responsive.
 - Dark mode support.
 
 ## Dependencies
 
+- [flutter_screenutil](https://pub.dev/packages/flutter_screenutil)
 - [google_fonts](https://pub.dev/packages/google_fonts)
 
 # License

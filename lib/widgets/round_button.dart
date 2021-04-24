@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sign_form/utils/size_helper.dart';
 import 'package:sign_form/utils/themes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RoundButton extends StatelessWidget {
   const RoundButton({
@@ -15,7 +15,7 @@ class RoundButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = BorderRadius.all(Radius.circular(10));
+    final borderRadius = BorderRadius.all(Radius.circular(5.r));
 
     return Material(
       color: appTheme(context).buttonColor,
@@ -25,14 +25,14 @@ class RoundButton extends StatelessWidget {
         borderRadius: borderRadius,
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: screenWidth(context) * 0.02,
-            vertical: screenHeight(context) * 0.01,
+            horizontal: 0.02.sw,
+            vertical: 0.01.sh,
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               if (icon != null) Icon(icon),
-              if (icon != null) SizedBox(width: screenWidth(context) * 0.01),
+              if (icon != null) SizedBox(width: 0.01.sw),
               Text(
                 text!,
                 style: TextStyle(

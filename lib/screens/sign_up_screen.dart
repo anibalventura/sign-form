@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sign_form/screens/welcome_screen.dart';
-import 'package:sign_form/utils/size_helper.dart';
 import 'package:sign_form/widgets/progress_indicator.dart';
 import 'package:sign_form/widgets/form_field.dart';
 import 'package:sign_form/widgets/round_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpScreen extends StatelessWidget {
   static final route = '/';
@@ -13,7 +13,7 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Container(
-          width: screenWidth(context) * 0.6,
+          width: 0.7.sw,
           child: Card(
             child: SignUpForm(),
           ),
@@ -69,7 +69,7 @@ class _SignUpFormState extends State<SignUpForm> {
         children: [
           AnimatedProgressIndicator(value: _formProgress),
           Padding(
-            padding: EdgeInsets.only(top: screenWidth(context) * 0.02),
+            padding: EdgeInsets.only(top: 0.02.sh),
             child: Text(
               'Sign up',
               style: Theme.of(context).textTheme.headline1,
@@ -93,8 +93,7 @@ class _SignUpFormState extends State<SignUpForm> {
             password: true,
           ),
           Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: screenWidth(context) * 0.02),
+            padding: EdgeInsets.symmetric(vertical: 0.02.sw),
             child: RoundButton(
               text: 'Sign up',
               icon: Icons.login,

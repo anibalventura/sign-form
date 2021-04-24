@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData appTheme(BuildContext context) {
   return Theme.of(context);
@@ -30,15 +31,17 @@ class Themes {
   static final Color? _lightIconColor = Colors.black;
 
   static final TextStyle _lightHeadline1TextStyle = TextStyle(
-      fontSize: 40, fontWeight: FontWeight.w400, color: _lightPrimaryTextColor);
+      fontSize: 32.sp,
+      fontWeight: FontWeight.w400,
+      color: _lightPrimaryTextColor);
   static final TextStyle _lightBodyText1TextStyle = TextStyle(
-      fontSize: 18,
-      fontWeight: FontWeight.w600,
+      fontSize: 16.sp,
+      fontWeight: FontWeight.w500,
       color: _lightSecondaryTextColor);
 
   static final TextStyle _lightSnackBarTextTheme = TextStyle(
     color: Colors.white,
-    fontSize: 18,
+    fontSize: 12.sp,
     fontWeight: FontWeight.w500,
   );
 
