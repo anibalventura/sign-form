@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:sign_form/screens/welcome_screen.dart';
-import 'package:sign_form/widgets/progress_indicator.dart';
-import 'package:sign_form/widgets/form_field.dart';
-import 'package:sign_form/widgets/round_button.dart';
+import 'package:sign_form/ui/screens/welcome_screen.dart';
+import 'package:sign_form/ui/widgets/base_container.dart';
+import 'package:sign_form/ui/widgets/progress_indicator.dart';
+import 'package:sign_form/ui/widgets/form_field.dart';
+import 'package:sign_form/ui/widgets/round_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sign_form/utils/utils.dart';
 
 class SignUpScreen extends StatelessWidget {
   static final route = '/';
@@ -11,10 +13,11 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
+      body: SafeArea(
+        child: BaseContainer(
+          topHeight: 0.2.sh,
           child: Container(
-            width: 0.7.sw,
+            width: screenPortrait() ? 0.7.sw : 0.4.sw,
             child: Card(
               child: SignUpForm(),
             ),
@@ -95,7 +98,9 @@ class _SignUpFormState extends State<SignUpForm> {
             password: true,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 0.02.sw),
+            padding: EdgeInsets.symmetric(
+              vertical: 0.03.sh,
+            ),
             child: RoundButton(
               text: 'Sign up',
               icon: Icons.login,

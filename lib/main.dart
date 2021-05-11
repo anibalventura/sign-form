@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sign_form/screens/sign_up_screen.dart';
-import 'package:sign_form/screens/welcome_screen.dart';
+import 'package:sign_form/ui/screens/sign_up_screen.dart';
+import 'package:sign_form/ui/screens/welcome_screen.dart';
 import 'package:sign_form/utils/themes.dart';
 
-void main() => runApp(SignUpApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(SignUpApp());
+}
 
 class SignUpApp extends StatelessWidget {
   @override

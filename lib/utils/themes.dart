@@ -3,16 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-ThemeData appTheme(BuildContext context) {
-  return Theme.of(context);
-}
-
 class Themes {
-  static String brightness(BuildContext context) {
-    final Brightness mode = MediaQuery.platformBrightnessOf(context);
-    return mode == Brightness.light ? 'light' : 'dark';
-  }
-
   static final String? _fontFamily = GoogleFonts.roboto().fontFamily;
 
   static final AppBarTheme _appBarTheme = AppBarTheme(
@@ -30,14 +21,17 @@ class Themes {
   static final Color _lightButtonColor = Color(0xFFe3e3e3);
   static final Color? _lightIconColor = Colors.black;
 
-  static final TextStyle _lightHeadline1TextStyle = TextStyle(
-      fontSize: 32.sp,
-      fontWeight: FontWeight.w400,
-      color: _lightPrimaryTextColor);
-  static final TextStyle _lightBodyText1TextStyle = TextStyle(
-      fontSize: 16.sp,
-      fontWeight: FontWeight.w500,
-      color: _lightSecondaryTextColor);
+  static final TextStyle _lightHeadline1 = TextStyle(
+    fontSize: 32.sp,
+    fontWeight: FontWeight.w400,
+    color: _lightPrimaryTextColor,
+  );
+
+  static final TextStyle _lightBodyText1 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+    color: _lightSecondaryTextColor,
+  );
 
   static final TextStyle _lightSnackBarTextTheme = TextStyle(
     color: Colors.white,
@@ -50,18 +44,12 @@ class Themes {
     scaffoldBackgroundColor: _lightBackgroundColor,
     cardColor: _lightCardColor,
     buttonColor: _lightButtonColor,
-    dialogTheme: DialogTheme(
-      backgroundColor: _lightCardColor,
-    ),
-    colorScheme: ColorScheme.light(
-      primary: _lightIconColor!,
-    ),
     iconTheme: IconThemeData(
       color: _lightIconColor,
     ),
     textTheme: TextTheme(
-      headline1: _lightHeadline1TextStyle,
-      bodyText1: _lightBodyText1TextStyle,
+      headline1: _lightHeadline1,
+      bodyText1: _lightBodyText1,
     ),
     snackBarTheme: SnackBarThemeData(
       contentTextStyle: _lightSnackBarTextTheme,
@@ -80,26 +68,20 @@ class Themes {
   static final Color? _darkIconColor = Colors.white;
 
   static final TextStyle _darkHeadline1TextStyle =
-      _lightHeadline1TextStyle.copyWith(color: _darkPrimaryTextColor);
+      _lightHeadline1.copyWith(color: _darkPrimaryTextColor);
   static final TextStyle _darkBodyText1TextStyle =
-      _lightBodyText1TextStyle.copyWith(color: _darkSecondaryTextColor);
+      _lightBodyText1.copyWith(color: _darkSecondaryTextColor);
 
   static final TextStyle _darkSnackBarTextTheme =
       _lightSnackBarTextTheme.copyWith(
     color: Colors.black,
   );
 
-  static final ThemeData darkTheme = ThemeData(
+  static final ThemeData darkTheme = ThemeData.dark().copyWith(
     appBarTheme: _appBarTheme,
     scaffoldBackgroundColor: _darkBackgroundColor,
     cardColor: _darkCardColor,
     buttonColor: _darkButtonColor,
-    dialogTheme: DialogTheme(
-      backgroundColor: _darkCardColor,
-    ),
-    colorScheme: ColorScheme.light(
-      onSurface: _darkPrimaryTextColor,
-    ),
     iconTheme: IconThemeData(
       color: _darkIconColor,
     ),
@@ -110,6 +92,5 @@ class Themes {
     snackBarTheme: SnackBarThemeData(
       contentTextStyle: _darkSnackBarTextTheme,
     ),
-    fontFamily: _fontFamily,
   );
 }

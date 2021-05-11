@@ -22,7 +22,9 @@ class _AnimatedProgressIndicatorState extends State<AnimatedProgressIndicator>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        duration: Duration(milliseconds: 1200), vsync: this);
+      duration: Duration(milliseconds: 1200),
+      vsync: this,
+    );
 
     final colorTween = TweenSequence([
       TweenSequenceItem(
